@@ -9,13 +9,13 @@ export const COLLECTIONS: Collection[] = [
     id: 'sartorial',
     title: 'Sartorial',
     description: 'A dialogue between structure and breath. Tailored elegance in linen and cotton.',
-    image: 'https://images.unsplash.com/photo-1594932224828-b4b057b693e5?q=80&w=2080&auto=format&fit=crop'
+    image: 'https://i.ibb.co/QF3TkTM2/trousers.webp'
   },
   {
     id: 'panache',
     title: 'Panache',
     description: 'Tactile intelligence. 100% cashmere essentials that redefine the mundane.',
-    image: 'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=1972&auto=format&fit=crop'
+    image: 'https://i.ibb.co/8DRBHCN9/t-shirt.webp'
   },
   {
     id: 'haute-couture',
@@ -33,8 +33,18 @@ export const PRODUCTS: Product[] = [
     price: '€480',
     description: 'A study in breathable geometry. Crafted from Italian long-staple linen, this navy shirt offers a sharp collar architecture that maintains its integrity in humid climates.',
     colors: ['Navy', 'Black', 'White'],
-    image: 'https://images.unsplash.com/photo-1598033129183-c4f50c717658?q=80&w=1974&auto=format&fit=crop',
+    image: 'https://i.ibb.co/LDs582s6/shirt.webp',
     fabric: '100% Italian Linen'
+  },
+  {
+    id: 's2',
+    name: 'The Alabaster Linen Trouser',
+    collection: 'Sartorial',
+    price: '€520',
+    description: 'A silhouette of effortless precision. Woven from heavyweight Irish linen, these trousers feature a relaxed yet structured leg, designed to catch the breeze while maintaining a formal line.',
+    colors: ['White', 'Navy', 'Black'],
+    image: 'https://i.ibb.co/QF3TkTM2/trousers.webp',
+    fabric: '100% Irish Linen'
   },
   {
     id: 'p1',
@@ -43,7 +53,7 @@ export const PRODUCTS: Product[] = [
     price: '€850',
     description: 'The weightless armor. Sourced from the inner plateaus of Mongolia, this cream cashmere tee is knitted to a density that provides a structural drape without heat retention.',
     colors: ['Cream', 'Red', 'Brown', 'Black'],
-    image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1974&auto=format&fit=crop',
+    image: 'https://i.ibb.co/8DRBHCN9/t-shirt.webp',
     fabric: '100% Grade-A Cashmere'
   },
   {

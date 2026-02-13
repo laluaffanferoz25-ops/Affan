@@ -1,8 +1,9 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import Navbar from './components/Navbar';
 import ProductSection from './components/ProductSection';
 import AIConcierge from './components/AIConcierge';
+import SupportChat from './components/SupportChat';
 import { BRAND_NAME, TAGLINE, MANIFESTO, COLLECTIONS, PRODUCTS } from './constants';
 
 const App: React.FC = () => {
@@ -82,6 +83,9 @@ const App: React.FC = () => {
 
       {/* AI Concierge */}
       <AIConcierge />
+
+      {/* Floating Support Chat */}
+      <SupportChat />
 
       {/* Footer */}
       <footer className="bg-black py-20 px-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-[0.4em] text-gray-600">
