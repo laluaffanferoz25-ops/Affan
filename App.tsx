@@ -1,16 +1,24 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import ProductSection from './components/ProductSection';
 import AIConcierge from './components/AIConcierge';
 import SupportChat from './components/SupportChat';
+import ProductModal from './components/ProductModal';
+import ConciergePage from './components/ConciergePage';
+import { Product } from './types';
 import { BRAND_NAME, TAGLINE, MANIFESTO, COLLECTIONS, PRODUCTS } from './constants';
 
 const App: React.FC = () => {
-  return (
-    <div className="bg-[#0A0A0A] text-white">
-      <Navbar />
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [currentPage, setCurrentPage] = useState<'home' | 'concierge'>('home');
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentPage]);
+
+  const renderHome = () => (
+    <>
       <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 opacity-40 grayscale">
           <img 
@@ -47,12 +55,34 @@ const App: React.FC = () => {
 
       <div className="divide-y divide-white/5">
         {PRODUCTS.map((p, i) => (
-          <ProductSection key={p.id} product={p} reverse={i % 2 !== 0} />
+          <ProductSection 
+            key={p.id} 
+            product={p} 
+            reverse={i % 2 !== 0} 
+            onViewDetails={(product) => setSelectedProduct(product)}
+          />
         ))}
       </div>
 
       <AIConcierge />
+    </>
+  );
+
+  return (
+    <div className="bg-[#0A0A0A] text-white min-h-screen">
+      <Navbar 
+        onNavigateToConcierge={() => setCurrentPage('concierge')} 
+        onNavigateHome={() => setCurrentPage('home')}
+      />
+
+      {currentPage === 'home' ? renderHome() : <ConciergePage onBack={() => setCurrentPage('home')} />}
+
       <SupportChat />
+      
+      <ProductModal 
+        product={selectedProduct} 
+        onClose={() => setSelectedProduct(null)} 
+      />
 
       <footer className="py-20 px-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[9px] uppercase tracking-[0.4em] text-gray-600 opacity-60">
         <div>&copy; {BRAND_NAME} Atelier {new Date().getFullYear()}</div>

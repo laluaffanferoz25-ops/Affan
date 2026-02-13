@@ -4,6 +4,15 @@ import { Product, Collection } from './types';
 export const BRAND_NAME = "VARENNE";
 export const TAGLINE = "Presence, unstated.";
 
+export const ATELIER_DETAILS = {
+  address: "12 Place Vendôme, 75001 Paris",
+  secondaryAddress: "Savile Row, London W1S",
+  personnel: [
+    { name: "Julian Varenne", role: "Creative Director" },
+    { name: "Elena Rossi", role: "Head of Concierge" }
+  ]
+};
+
 export const COLLECTIONS: Collection[] = [
   {
     id: 'sartorial',
